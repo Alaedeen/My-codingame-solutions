@@ -12,11 +12,10 @@ import (
  **/
 
 func main() {
-	var N int = 4
+	var N int 
 	fmt.Scan(&N)
 	var T []int
 
-	diff := 10000000
 
 	for i := 0; i < N; i++ {
 		var pi int
@@ -25,12 +24,10 @@ func main() {
 		T = append(T, pi)
 
 	}
-
+	diff := int(math.Abs(float64(T[0]-T[1])))
 	sort.IntSlice.Sort(T)
 
 	for i := 1; i < len(T)-1; i++ {
-
-		
 			if T[i]-T[i+1] == 0 {
 				diff = 0
 				break
